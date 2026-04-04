@@ -7,12 +7,7 @@ import org.example.model.Animal;
 public class Main {
     public static void main(String[] args) {
 
-        Animal animal = new Animal();
-        animal.setEspecie("Gato");
-        animal.setID(1);
-        animal.setNome("Simba");
-        animal.setRaca("viralata");
-
+        Animal animal = new Animal("gato","viralata","Mingau","nenhum",2);
         System.out.println(animal.toString());
 
     }

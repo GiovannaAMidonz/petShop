@@ -15,7 +15,9 @@ public class Animal {
         this.ID = ID;
     }
 
-    public Animal() {
+
+    public String getHistorico(){
+        return "Historio enviando para o email";
     }
 
     public String getEspecie() {
@@ -52,10 +54,6 @@ public class Animal {
 
     public int getID() {
         return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
     }
 
     @Override
