@@ -28,8 +28,25 @@ public class Main {
                 sc.nextLine();
                 switch (opcao) {
                     case 1:
-                        System.out.println("entrar no sistema:");
-                        //metodo login()
+                        System.out.println(" ----- ENTRAR ----- ");
+
+                        System.out.println("Informe o seu e-mail:");
+                        String loginEmail = sc.nextLine();
+
+                        System.out.println("Informe sua senha:");
+                        String loginSenha = sc.nextLine();
+
+                        boolean logado = false;
+
+                        // O LOOP: Percorrendo a lista de clientes cadastrados
+                        for (ClienteDono c : clientes) {
+                            // Comparando os dados digitados com os dados do objeto 'c'
+                            if (c.getEmail().equals(loginEmail) && c.getSenha().equals(loginSenha)) {
+                                System.out.println("\n[SISTEMA] Bem-vindo, " + c.getName() + "!");
+                                logado = true;
+                                break;
+                            }
+                        }
                         break;
                     case 2:
                         System.out.println(" ----- Cadastrar clientes ----- ");
@@ -50,7 +67,10 @@ public class Main {
 
                         break;
                     case 3:
-                        System.out.println("Tabela de Serviços");
+                        System.out.println("Tabela de Clientes cadastrados --- por enquanto");
+                        for (ClienteDono c : clientes){
+                            System.out.println(c.toString());
+                        }
                         break;
                     case 4:
                         System.out.println("Obrigado volte sempre!");
