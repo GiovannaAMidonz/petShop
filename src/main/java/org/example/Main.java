@@ -64,6 +64,26 @@ public class Main {
                         clientes.add(novo);
 
                         System.out.println("Cliente "+nome + " Cadastrado com Sucesso!");
+                        System.out.println("Você deseja cadastrar um animal:\n{Y} ou {N}");
+                        char respostaCadastrarAnimal = sc.next().charAt(0);
+                        sc.nextLine();
+                        if (respostaCadastrarAnimal == 'y' || respostaCadastrarAnimal == 'Y'){
+                            System.out.println("Informe a especie do seu animal:");
+                            String especie = sc.nextLine();
+
+                            System.out.println("Informe qual é a raça:");
+                            String raca = sc.nextLine();
+
+                            System.out.println("Informe seu nome:");
+                            String nomePet = sc.nextLine();
+
+                            Animal animal = new Animal(especie,raca,nomePet,null);
+                            novo.adicionarAnimal(animal);
+                            System.out.println("Animal cadastrado com sucesso!");
+                        }else{
+                            System.out.println("Obrigado! continue a navegação🛜");
+                        }
+
 
                         break;
                     case 3:

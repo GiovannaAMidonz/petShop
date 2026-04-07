@@ -1,11 +1,16 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClienteDono {
     protected int ID;
     protected String name;
     protected String email;
     protected String senha;
     private static int contador = 1;
+    private List<Animal> animalList = new ArrayList<>();
+
     public ClienteDono(String name, String email, String senha) {
         this.name = name;
         this.email = email;
@@ -14,6 +19,9 @@ public class ClienteDono {
         contador++;
     }
 
+    public void adicionarAnimal(Animal animal){
+        this.animalList.add(animal);
+    }
 
     public String getSenha() {
         return senha;

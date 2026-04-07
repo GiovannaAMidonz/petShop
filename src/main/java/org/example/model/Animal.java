@@ -6,13 +6,14 @@ public class Animal {
     protected String nome;
     protected String historicoMedico;
     protected int ID;
-
-    public Animal(String especie, String raca, String nome, String historicoMedico, int ID) {
+    private static int contador;
+    public Animal(String especie, String raca, String nome, String historicoMedico) {
         this.especie = especie;
         this.raca = raca;
         this.nome = nome;
         this.historicoMedico = historicoMedico;
-        this.ID = ID;
+        this.ID = contador;
+        contador++;
     }
 
 
