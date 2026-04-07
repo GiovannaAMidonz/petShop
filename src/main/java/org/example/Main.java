@@ -4,10 +4,7 @@ import org.example.model.Animal;
 import org.example.model.ClienteDono;
 import org.example.model.Ordem;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -28,14 +25,29 @@ public class Main {
 
             try {
                 opcao = sc.nextInt();
+                sc.nextLine();
                 switch (opcao) {
                     case 1:
                         System.out.println("entrar no sistema:");
                         //metodo login()
                         break;
                     case 2:
-                        System.out.println("cadastrar o cliente ");
-                        //adicionar na listar
+                        System.out.println(" ----- Cadastrar clientes ----- ");
+
+                        System.out.println("Informe o seu nome:");
+                        String nome = sc.nextLine();
+
+                        System.out.println("Informe o seu e-mail:");
+                        String email = sc.nextLine();
+
+                        System.out.println("Informe a sua senha:");
+                        String senha = sc.nextLine();
+
+                        ClienteDono novo = new ClienteDono(nome,email,senha);
+                        clientes.add(novo);
+
+                        System.out.println("Cliente "+nome + " Cadastrado com Sucesso!");
+
                         break;
                     case 3:
                         System.out.println("Tabela de Serviços");

@@ -5,18 +5,15 @@ public class ClienteDono {
     protected String name;
     protected String email;
     protected String senha;
-
-    public ClienteDono(int ID, String name, String email, String senha) {
-        this.ID = ID;
+    private static int contador = 1;
+    public ClienteDono(String name, String email, String senha) {
         this.name = name;
         this.email = email;
         this.senha = senha;
+        this.ID = contador;
+        contador++;
     }
 
-    public int getID() {
-
-        return ID;
-    }
 
     public String getSenha() {
         return senha;
@@ -36,5 +33,15 @@ public class ClienteDono {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteDono{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
     }
 }
